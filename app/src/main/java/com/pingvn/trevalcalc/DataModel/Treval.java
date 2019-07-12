@@ -1,15 +1,14 @@
 package com.pingvn.trevalcalc.DataModel;
 
 
-
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
 public class Treval extends RealmObject {
     private int mid;
     private String mName;
-    private Direction mDirection;
-    private RealmList<Tourist> mTurists;
+    private RealmList<Direction> mDirection = new RealmList<>();
+    private RealmList<Tourist> mTurists = new RealmList<>();
 
     public int getMid() {
         return mid;
@@ -27,12 +26,12 @@ public class Treval extends RealmObject {
         this.mName = mName;
     }
 
-    public Direction getmDirection() {
+    public RealmList<Direction> getmDirection() {
         return mDirection;
     }
 
-    public void setmDirection(Direction mDirection) {
-        this.mDirection = mDirection;
+    public void setmDirection(RealmList<Direction> mDirection) {
+        this.mDirection.addAll(mDirection);
     }
 
     public RealmList<Tourist> getmTurists() {
@@ -40,6 +39,6 @@ public class Treval extends RealmObject {
     }
 
     public void setmTurists(RealmList<Tourist> mTurists) {
-        this.mTurists = mTurists;
+        this.mTurists.addAll(mTurists);
     }
 }

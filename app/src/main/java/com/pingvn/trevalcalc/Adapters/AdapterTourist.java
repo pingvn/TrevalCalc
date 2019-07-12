@@ -14,10 +14,13 @@ import com.pingvn.trevalcalc.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterTourist extends RecyclerView.Adapter<AdapterTourist.ViewHolder> {
-    private List<Tourist> mList = new ArrayList<>();
+import io.realm.Realm;
+import io.realm.RealmList;
 
-    public AdapterTourist(List<Tourist> mList) {
+public class AdapterTourist extends RecyclerView.Adapter<AdapterTourist.ViewHolder> {
+    private RealmList<Tourist> mList = new RealmList<>();
+
+    public AdapterTourist(RealmList<Tourist> mList) {
         this.mList = mList;
     }
 

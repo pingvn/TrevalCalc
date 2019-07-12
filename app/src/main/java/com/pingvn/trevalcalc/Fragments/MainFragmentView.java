@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -12,10 +14,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.pingvn.trevalcalc.Adapters.AdapterTreval;
+import com.pingvn.trevalcalc.DataModel.Treval;
 import com.pingvn.trevalcalc.R;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+import io.realm.Realm;
 
 public class MainFragmentView extends Fragment {
     private FloatingActionButton mCreateButton;
+    private RecyclerView mRecuclerViewTreval;
 
     private OnMainFragmentInteractionListener mListener;
 
@@ -34,17 +45,29 @@ public class MainFragmentView extends Fragment {
                              Bundle savedInstanceState) {
         View mView = inflater.inflate(R.layout.fragment_main_fragment_view, container, false);
         initElements(mView);
+        fillRecycler();
         return mView;
     }
 
     private void initElements(View mView){
         mCreateButton = mView.findViewById(R.id.id_floatingActionButton_treval);
+        mRecuclerViewTreval = mView.findViewById(R.id.id_recyclerview_treval);
+        mRecuclerViewTreval.setLayoutManager(new LinearLayoutManager(mView.getContext()));
         mCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListener.onFragmentInteraction("#createtreval");
             }
         });
+    }
+
+    private void fillRecycler(){
+        Realm mRealm = Realm.getDefaultInstance();
+        List<Treval> mList = mRealm.copyFromRealm(mRealm.where(Treval.class).findAll());
+        mRealm.close();
+        AdapterTreval mAdapter = new AdapterTreval(mList);
+        mRecuclerViewTreval.setAdapter(mAdapter);
+
     }
 
 

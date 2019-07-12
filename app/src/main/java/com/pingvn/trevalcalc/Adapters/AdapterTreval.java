@@ -12,12 +12,13 @@ import com.pingvn.trevalcalc.DataModel.Treval;
 import com.pingvn.trevalcalc.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdapterTreval extends RecyclerView.Adapter<AdapterTreval.ViewHolder> {
 
-    private ArrayList<Treval> mList = new ArrayList<>();
+    private List<Treval> mList = new ArrayList<>();
 
-    public AdapterTreval(ArrayList<Treval> mList) {
+    public AdapterTreval(List<Treval> mList) {
         this.mList = mList;
     }
 
@@ -32,7 +33,7 @@ public class AdapterTreval extends RecyclerView.Adapter<AdapterTreval.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Treval mTreval = mList.get(position);
         holder.mName.setText(mTreval.getmName());
-        holder.mDirection.setText(mTreval.getmDirection().getmName());
+        holder.mDirection.setText(mTreval.getmDirection().get(0).getmName());
     }
 
     @Override

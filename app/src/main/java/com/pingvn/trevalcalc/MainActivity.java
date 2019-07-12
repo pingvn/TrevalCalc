@@ -47,6 +47,13 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
             case "#createTourist":{
                 getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container,new AddTouristFragment()).commit();
             }break;
+            case "#create":
+            {
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container,new MainFragmentView()).commit();
+            }break;
+            case "#cancel":{
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container,new MainFragmentView()).commit();
+            }break;
         }
 
     }
