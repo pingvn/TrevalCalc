@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -50,14 +49,37 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
     private RealmList<Tourist> mRealmTourists = new RealmList<>();
     private boolean nocoise = true;
     private boolean nocoiseTourist = true;
+    private String mEditTreval;
+    private Treval mTrevalForEdite = new Treval();
+    private boolean misEdite = false;
+
+    private final static String PARAM_NAME = "name";
+
 
     public AddTrevalFragment() {
         // Required empty public constructor
     }
 
+    public static AddTrevalFragment newInstance(String mParam){
+        AddTrevalFragment fragment = new AddTrevalFragment();
+        Bundle mArguments = new Bundle();
+        mArguments.putString(PARAM_NAME,mParam);
+        fragment.setArguments(mArguments);
+        return fragment;
+    }
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(getArguments() != null){
+            mEditTreval = getArguments().getString(PARAM_NAME);
+            Realm mRealm = Realm.getDefaultInstance();
+            mTrevalForEdite = mRealm.where(Treval.class).endsWith("mNAme", mEditTreval).findFirst();
+            mRealm.close();
+            misEdite = true;
+
+        }
     }
 
     @Override
@@ -65,8 +87,13 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
                              Bundle savedInstanceState) {
         View mView = inflater.inflate(R.layout.fragment_add_treval, container, false);
         initElements(mView);
-        spinerDirection(mView);
-        spinerTourist(mView);
+        if(misEdite){
+
+        }else{
+            spinerDirection(mView);
+            spinerTourist(mView);
+        }
+
 
         return mView;
     }

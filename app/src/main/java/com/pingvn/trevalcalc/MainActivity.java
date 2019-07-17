@@ -2,17 +2,12 @@ package com.pingvn.trevalcalc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.net.Uri;
 import android.os.Bundle;
-
-import com.pingvn.trevalcalc.DataModel.Direction;
 import com.pingvn.trevalcalc.Fragments.AddDirectionFragment;
 import com.pingvn.trevalcalc.Fragments.AddTouristFragment;
 import com.pingvn.trevalcalc.Fragments.AddTrevalFragment;
 import com.pingvn.trevalcalc.Fragments.MainFragmentView;
-
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 public class MainActivity extends AppCompatActivity implements MainFragmentView.OnMainFragmentInteractionListener,
         AddTrevalFragment.OnFragmentAddTrevalInteractionListener,
