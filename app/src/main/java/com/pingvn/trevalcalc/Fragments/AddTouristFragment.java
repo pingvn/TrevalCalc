@@ -86,8 +86,8 @@ public class AddTouristFragment extends Fragment implements View.OnClickListener
                 }else{
                     Realm mRealm = Realm.getDefaultInstance();
                     mRealm.beginTransaction();
-                    Tourist mTourist = mRealm.createObject(Tourist.class);
-                    mTourist.setmName(mName.getText().toString());
+                    Tourist mTourist = mRealm.createObject(Tourist.class,mName.getText().toString());
+                   // mTourist.setmName(mName.getText().toString());
                     mTourist.setmCredit(Double.parseDouble(mCredite.getText().toString()));
                     mTourist.setmDeposite(Double.parseDouble(mDeposite.getText().toString()));
                     mRealm.commitTransaction();

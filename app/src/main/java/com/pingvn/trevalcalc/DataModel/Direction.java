@@ -1,10 +1,14 @@
 package com.pingvn.trevalcalc.DataModel;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Direction extends RealmObject {
     private int mid;
+
+    @PrimaryKey
     private String mName;
+
     private String mInfo;
     private double mTicetCoast; // расходы на билеты
     private double mAccomodationCoast; // расходы на размещение

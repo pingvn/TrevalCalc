@@ -35,6 +35,12 @@ public class AdapterTreval extends RecyclerView.Adapter<AdapterTreval.ViewHolder
         holder.mName.setText(mTreval.getmName());
         holder.mDirection.setText(mTreval.getmDirection().get(0).getmName());
     }
+    //функция для удаления элемента из Recyclerview
+    public void removeItem(int position){
+        mList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position,mList.size());
+    }
 
     @Override
     public int getItemCount() {

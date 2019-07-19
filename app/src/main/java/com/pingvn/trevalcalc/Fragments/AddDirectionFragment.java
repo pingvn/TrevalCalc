@@ -80,19 +80,25 @@ public class AddDirectionFragment extends Fragment implements View.OnClickListen
 
     private boolean compileDirection() {
         Realm mRealm = Realm.getDefaultInstance();
-        if(mName.getText().toString().isEmpty()){
-            Toast.makeText(getContext(),"Должно быть заполнено хотябы поле Имя",Toast.LENGTH_LONG).show();
+        if (mName.getText().toString().isEmpty()) {
+            Toast.makeText(getContext(), "Должно быть заполнено хотябы поле Имя", Toast.LENGTH_LONG).show();
             mRealm.close();
             return false;
-        }else{
+        } else {
             mRealm.beginTransaction();
-            Direction mDirection = mRealm.createObject(Direction.class);
-            mDirection.setmName(mName.getText().toString());
-            if(!mInfo.getText().toString().isEmpty()) mDirection.setmInfo(mInfo.getText().toString());
-            if(!mTicket.getText().toString().isEmpty())mDirection.setmTicetCoast(Double.parseDouble(mTicket.getText().toString()));
-            if(!mAccomodation.getText().toString().isEmpty())mDirection.setmAccomodationCoast(Double.parseDouble(mAccomodation.getText().toString()));
-            if(!mFood.getText().toString().isEmpty())mDirection.setmFoodCoast(Double.parseDouble(mFood.getText().toString()));
-            if(!mFare.getText().toString().isEmpty())mDirection.setmFoodCoast(Double.parseDouble(mFare.getText().toString()));
+            Direction mDirection = mRealm.createObject(Direction.class,mInfo.getText().toString());
+            //mDirection.setmName(mName.getText().toString());
+            if (!mInfo.getText().toString().isEmpty())
+               mDirection.setmInfo(mInfo.getText().toString());
+            else mDirection.setmInfo(" ");
+            if (!mTicket.getText().toString().isEmpty())
+                mDirection.setmTicetCoast(Double.parseDouble(mTicket.getText().toString()));
+            if (!mAccomodation.getText().toString().isEmpty())
+                mDirection.setmAccomodationCoast(Double.parseDouble(mAccomodation.getText().toString()));
+            if (!mFood.getText().toString().isEmpty())
+                mDirection.setmFoodCoast(Double.parseDouble(mFood.getText().toString()));
+            if (!mFare.getText().toString().isEmpty())
+                mDirection.setmFoodCoast(Double.parseDouble(mFare.getText().toString()));
             mRealm.commitTransaction();
             mRealm.close();
         }
@@ -103,8 +109,8 @@ public class AddDirectionFragment extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.id_idcreateDirection_addbutton: {
-                if(compileDirection())
-                mListener.onFragmentAddDirectionInteraction("#create");
+                if (compileDirection())
+                    mListener.onFragmentAddDirectionInteraction("#create");
 
             }
             break;

@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pingvn.trevalcalc.Adapters.AdapterTreval;
 import com.pingvn.trevalcalc.DataModel.Treval;
 import com.pingvn.trevalcalc.R;
+import com.pingvn.trevalcalc.Utils.SwipeTreval;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -50,9 +52,12 @@ public class MainFragmentView extends Fragment {
     }
 
     private void initElements(View mView){
+        SwipeTreval mSwipe = new SwipeTreval();
+        ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(mSwipe);
         mCreateButton = mView.findViewById(R.id.id_floatingActionButton_treval);
         mRecuclerViewTreval = mView.findViewById(R.id.id_recyclerview_treval);
         mRecuclerViewTreval.setLayoutManager(new LinearLayoutManager(mView.getContext()));
+        mItemTouchHelper.attachToRecyclerView(mRecuclerViewTreval);
         mCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

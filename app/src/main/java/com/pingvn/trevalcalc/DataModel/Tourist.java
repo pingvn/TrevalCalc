@@ -1,10 +1,13 @@
 package com.pingvn.trevalcalc.DataModel;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Tourist extends RealmObject {
     private int mid;
+    @PrimaryKey
     private String mName;
+
     private double mCredit;
     private double mDeposite;
 

@@ -3,9 +3,12 @@ package com.pingvn.trevalcalc.DataModel;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Treval extends RealmObject {
     private int mid;
+
+    @PrimaryKey
     private String mName;
     private RealmList<Direction> mDirection = new RealmList<>();
     private RealmList<Tourist> mTurists = new RealmList<>();

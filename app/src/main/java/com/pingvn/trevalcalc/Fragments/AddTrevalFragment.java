@@ -53,33 +53,15 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
     private Treval mTrevalForEdite = new Treval();
     private boolean misEdite = false;
 
-    private final static String PARAM_NAME = "name";
-
 
     public AddTrevalFragment() {
         // Required empty public constructor
-    }
-
-    public static AddTrevalFragment newInstance(String mParam){
-        AddTrevalFragment fragment = new AddTrevalFragment();
-        Bundle mArguments = new Bundle();
-        mArguments.putString(PARAM_NAME,mParam);
-        fragment.setArguments(mArguments);
-        return fragment;
     }
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getArguments() != null){
-            mEditTreval = getArguments().getString(PARAM_NAME);
-            Realm mRealm = Realm.getDefaultInstance();
-            mTrevalForEdite = mRealm.where(Treval.class).endsWith("mNAme", mEditTreval).findFirst();
-            mRealm.close();
-            misEdite = true;
-
-        }
     }
 
     @Override
@@ -87,14 +69,8 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
                              Bundle savedInstanceState) {
         View mView = inflater.inflate(R.layout.fragment_add_treval, container, false);
         initElements(mView);
-        if(misEdite){
-
-        }else{
-            spinerDirection(mView);
-            spinerTourist(mView);
-        }
-
-
+        spinerDirection(mView);
+        spinerTourist(mView);
         return mView;
     }
 
@@ -133,19 +109,19 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
             ArrayAdapter<String> mAdapterDiscriptions = new ArrayAdapter<String>(mView.getContext(), android.R.layout.simple_spinner_item, mListNamesDirections);
             mAdapterDiscriptions.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
             mChoiseDirection.setAdapter(mAdapterDiscriptions);
-            mChoiseDirection.setSelection((mListNamesDirections.size())-1);
+            mChoiseDirection.setSelection((mListNamesDirections.size()) - 1);
             mChoiseDirection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    if(!nocoise){
+                    if (!nocoise) {
                         mSelectDirection = i;
                         mDirectionText.setText(mDirections.get(i).getmName());
                         mDirectionText.append(" - ");
                         mDirectionText.append(mDirections.get(i).getmInfo());
                         mDirectionText.append(summTreval(mDirections.get(i)));
-                    }else{
-                        nocoise =false;
-                        mListNamesDirections.remove((mListNamesDirections.size())-1);
+                    } else {
+                        nocoise = false;
+                        mListNamesDirections.remove((mListNamesDirections.size()) - 1);
                     }
 
                 }
@@ -163,28 +139,28 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
         mTourists = mRealmTourist.copyFromRealm(mRealmTourist.where(Tourist.class).findAll());
         mRealmTourist.close();
         final List<String> mListTourists = new ArrayList<>();
-        for (int i = 0; i < mTourists.size(); i++){
+        for (int i = 0; i < mTourists.size(); i++) {
             mListTourists.add(mTourists.get(i).getmName());
         }
-        if(mListTourists.size() > 0){
+        if (mListTourists.size() > 0) {
             mListTourists.add(getString(R.string.spiner_tourist_default));
-            ArrayAdapter<String> mAdapterTourist = new ArrayAdapter<String>(mView.getContext(),android.R.layout.simple_spinner_item, mListTourists);
+            ArrayAdapter<String> mAdapterTourist = new ArrayAdapter<String>(mView.getContext(), android.R.layout.simple_spinner_item, mListTourists);
             mAdapterTourist.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
             mChoiseTourist.setAdapter(mAdapterTourist);
-            mChoiseTourist.setSelection((mListTourists.size())-1);
+            mChoiseTourist.setSelection((mListTourists.size()) - 1);
             mChoiseTourist.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        if(!nocoiseTourist){
-                            if(!mRealmTourists.contains(mTourists.get(i))){
-                                mRealmTourists.add(mTourists.get(i));
-                            }
-                            mAdapterTouristRecycler = new AdapterTourist(mRealmTourists);
-                            mRecyclerView.setAdapter(mAdapterTouristRecycler);
-                        }else{
-                            nocoiseTourist = false;
-                            mListTourists.remove((mListTourists.size())-1);
+                    if (!nocoiseTourist) {
+                        if (!mRealmTourists.contains(mTourists.get(i))) {
+                            mRealmTourists.add(mTourists.get(i));
                         }
+                        mAdapterTouristRecycler = new AdapterTourist(mRealmTourists);
+                        mRecyclerView.setAdapter(mAdapterTouristRecycler);
+                    } else {
+                        nocoiseTourist = false;
+                        mListTourists.remove((mListTourists.size()) - 1);
+                    }
 
 
                 }
@@ -237,18 +213,18 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
             }
             break;
             case R.id.id_create_treval_button: {
-                if(mNameTravel.getText().toString().isEmpty()){
-                    Toast.makeText(getContext(),getString(R.string.message_now_name_treval),Toast.LENGTH_LONG).show();
-                }else{
-                    if(mSelectDirection == -1){
-                        Toast.makeText(getContext(),getString(R.string.message_select_direction),Toast.LENGTH_LONG).show();
-                    }else{
+                if (mNameTravel.getText().toString().isEmpty()) {
+                    Toast.makeText(getContext(), getString(R.string.message_now_name_treval), Toast.LENGTH_LONG).show();
+                } else {
+                    if (mSelectDirection == -1) {
+                        Toast.makeText(getContext(), getString(R.string.message_select_direction), Toast.LENGTH_LONG).show();
+                    } else {
                         RealmList<Direction> mList = new RealmList<>();
                         mList.add(mDirections.get(mSelectDirection));
                         Realm mRealm = Realm.getDefaultInstance();
                         mRealm.beginTransaction();
-                        Treval mTreval = mRealm.createObject(Treval.class);
-                        mTreval.setmName(mNameTravel.getText().toString());
+                        Treval mTreval = mRealm.createObject(Treval.class, mNameTravel.getText().toString());
+                        //mTreval.setmName(mNameTravel.getText().toString());
                         mTreval.setmDirection(mList);
                         mTreval.setmTurists(mRealmTourists);
                         mRealm.commitTransaction();

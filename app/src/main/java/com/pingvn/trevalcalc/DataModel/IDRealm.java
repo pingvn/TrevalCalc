@@ -3,6 +3,7 @@ package com.pingvn.trevalcalc.DataModel;
 import io.realm.RealmObject;
 
 public class IDRealm extends RealmObject {
+
     private int midTreval;
     private int midTourist;
     private int midDirection;
