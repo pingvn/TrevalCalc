@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pingvn.trevalcalc.DataModel.Tourist;
+import com.pingvn.trevalcalc.Fragments.EditTrevalFragment;
 import com.pingvn.trevalcalc.R;
 
 import java.util.ArrayList;
@@ -20,8 +21,16 @@ import io.realm.RealmList;
 public class AdapterTourist extends RecyclerView.Adapter<AdapterTourist.ViewHolder> {
     private RealmList<Tourist> mList = new RealmList<>();
 
+
     public AdapterTourist(RealmList<Tourist> mList) {
         this.mList = mList;
+    }
+
+
+    public void removeItem(int position){
+        mList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position,mList.size());
     }
 
     @NonNull
@@ -38,6 +47,7 @@ public class AdapterTourist extends RecyclerView.Adapter<AdapterTourist.ViewHold
 
     }
 
+
     @Override
     public int getItemCount() {
         return mList.size();
@@ -51,4 +61,6 @@ public class AdapterTourist extends RecyclerView.Adapter<AdapterTourist.ViewHold
         }
 
     }
+
+
 }

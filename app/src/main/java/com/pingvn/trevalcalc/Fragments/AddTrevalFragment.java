@@ -224,7 +224,6 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
                         Realm mRealm = Realm.getDefaultInstance();
                         mRealm.beginTransaction();
                         Treval mTreval = mRealm.createObject(Treval.class, mNameTravel.getText().toString());
-                        //mTreval.setmName(mNameTravel.getText().toString());
                         mTreval.setmDirection(mList);
                         mTreval.setmTurists(mRealmTourists);
                         mRealm.commitTransaction();

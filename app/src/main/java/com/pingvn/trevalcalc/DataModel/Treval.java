@@ -34,6 +34,7 @@ public class Treval extends RealmObject {
     }
 
     public void setmDirection(RealmList<Direction> mDirection) {
+        this.mDirection.clear();
         this.mDirection.addAll(mDirection);
     }
 
@@ -42,6 +43,7 @@ public class Treval extends RealmObject {
     }
 
     public void setmTurists(RealmList<Tourist> mTurists) {
+        this.mTurists.clear();
         this.mTurists.addAll(mTurists);
     }
 }

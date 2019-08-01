@@ -86,7 +86,7 @@ public class AddDirectionFragment extends Fragment implements View.OnClickListen
             return false;
         } else {
             mRealm.beginTransaction();
-            Direction mDirection = mRealm.createObject(Direction.class,mInfo.getText().toString());
+            Direction mDirection = mRealm.createObject(Direction.class,mName.getText().toString());
             //mDirection.setmName(mName.getText().toString());
             if (!mInfo.getText().toString().isEmpty())
                mDirection.setmInfo(mInfo.getText().toString());
