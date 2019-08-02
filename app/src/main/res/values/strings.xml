@@ -6,6 +6,22 @@
     <string name="message_now_name_treval">Назовите путешествие</string>
     <string name="message_select_direction">Выберете направление путешествия</string>
 
+    <!--Button -->
+    <string name="button_create">Создать</string>
+    <string name="button_cancel">Отмена</string>
+    <string name="button_delete">Удалить</string>
+
+    <!--menu -->
+    <string name="main_menu_edit_tourist">Редактировать путешественников</string>
+    <string name="main_menu_edit_direction">Редактировать направления</string>
+    <string name="main_menu_delete_all">Удалить все записи</string>
+
+    <!--Text -->
+    <string name="text_warnind_befor_delete_all">Внимание! Нажав кнопку Удалить, вы удалите все ранее созданые записи.</string>
+
+    <!-- Message -->
+    <string name="Message_delete">Невозможно удалить, элемент используеться.</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

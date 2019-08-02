@@ -14,7 +14,6 @@ import com.pingvn.trevalcalc.Adapters.AdapterTreval;
 import com.pingvn.trevalcalc.DataModel.Treval;
 import com.pingvn.trevalcalc.R;
 import com.pingvn.trevalcalc.Utils.SwipeToDeleteTreval;
-import com.pingvn.trevalcalc.Utils.SwipetoDeleteTouristonTreval;
 
 import java.util.ArrayList;
 import java.util.List;

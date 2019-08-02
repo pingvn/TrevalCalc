@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/id_menu_edit_turist"
+        android:title="@string/main_menu_edit_tourist" />
+    <item
+        android:id="@+id/id_menu_edit_direction"
+        android:title="@string/main_menu_edit_direction" />
+    <item
+        android:id="@+id/id_menu_delete_all"
+        android:title="@string/main_menu_delete_all" />
+
+</menu>

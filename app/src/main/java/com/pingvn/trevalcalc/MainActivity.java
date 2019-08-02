@@ -1,13 +1,18 @@
 package com.pingvn.trevalcalc;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.pingvn.trevalcalc.Fragments.AddDirectionFragment;
 import com.pingvn.trevalcalc.Fragments.AddTouristFragment;
 import com.pingvn.trevalcalc.Fragments.AddTrevalFragment;
+import com.pingvn.trevalcalc.Fragments.DeleteAllFragment;
+import com.pingvn.trevalcalc.Fragments.EditListsTuristandDirectionFragment;
 import com.pingvn.trevalcalc.Fragments.EditTrevalFragment;
 import com.pingvn.trevalcalc.Fragments.MainFragmentView;
 
@@ -17,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
         AddTrevalFragment.OnFragmentAddTrevalInteractionListener,
         AddDirectionFragment.OnFragmentAddDirectionInteractionListener,
         AddTouristFragment.OnFragmentAddTouristInteractionListener,
-        EditTrevalFragment.OnEditFragmentFragmentInteractionListener {
+        EditTrevalFragment.OnEditFragmentFragmentInteractionListener,
+        DeleteAllFragment.OnDeleteAllFragmentInteractionListener , EditListsTuristandDirectionFragment.OnTuristAndDirecionFragmentInteractionListener{
     private String mEditeTrevalName = " ";
 
     @Override
@@ -78,17 +84,17 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
     public void onFragmentAddDirectionInteraction(String respone) {
         switch (respone) {
             case "#create": {
-                if(mEditeTrevalName == " "){
+                if (mEditeTrevalName == " ") {
                     getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddTrevalFragment()).commit();
-                }else{
+                } else {
                     getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditTrevalFragment.newInstance(mEditeTrevalName)).commit();
                 }
             }
             break;
             case "#cancel": {
-                if(mEditeTrevalName == " "){
+                if (mEditeTrevalName == " ") {
                     getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddTrevalFragment()).commit();
-                }else{
+                } else {
                     getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditTrevalFragment.newInstance(mEditeTrevalName)).commit();
                 }
             }
@@ -101,18 +107,18 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
     public void onAddTouristFragmentInteraction(String respone) {
         switch (respone) {
             case "#create": {
-                if(mEditeTrevalName == " "){
+                if (mEditeTrevalName == " ") {
                     getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddTrevalFragment()).commit();
-                }else{
+                } else {
                     getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditTrevalFragment.newInstance(mEditeTrevalName)).commit();
                 }
 
             }
             break;
             case "#cancel": {
-                if(mEditeTrevalName == " "){
+                if (mEditeTrevalName == " ") {
                     getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddTrevalFragment()).commit();
-                }else{
+                } else {
                     getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditTrevalFragment.newInstance(mEditeTrevalName)).commit();
                 }
             }
@@ -142,6 +148,51 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
                 mEditeTrevalName = " ";
             }
             break;
+        }
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.id_menu_edit_turist: {
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditListsTuristandDirectionFragment.newInstance(EditListsTuristandDirectionFragment.TOURIST_CHOISE)).commit();
+            }
+            break;
+            case R.id.id_menu_edit_direction: {
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditListsTuristandDirectionFragment.newInstance(EditListsTuristandDirectionFragment.DIRECTION_CHOISE)).commit();
+            }
+            break;
+            case R.id.id_menu_delete_all: {
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new DeleteAllFragment()).commit();
+            }
+            break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDeleteAllFragmentInteraction() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new MainFragmentView()).commit();
+    }
+
+    @Override
+    public void onTuristAndDirecionFragmentInteraction(String mCommand, String mName) {
+        switch (mCommand) {
+            case "#editeDirection": {
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddDirectionFragment()).commit();
+            }
+            break;
+            case "#editeTourist": {
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddTouristFragment()).commit();
+            }
+
         }
 
     }
