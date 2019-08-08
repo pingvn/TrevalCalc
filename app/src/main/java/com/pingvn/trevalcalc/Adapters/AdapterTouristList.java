@@ -87,6 +87,7 @@ public class AdapterTouristList extends RecyclerView.Adapter<AdapterTouristList.
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             initElements(itemView);
         }
 

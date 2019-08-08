@@ -15,6 +15,7 @@
         android:layout_marginTop="50dp" />
 
     <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/colorSecondveryLight"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="10dp"
@@ -30,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="выбор направления" />
+                android:text="@string/text_Treval_Name_Select_Direcion" />
 
             <Spinner
                 android:id="@+id/id_spener_direction_treval"
@@ -43,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="230dp"
                 android:layout_marginTop="25dp"
-                android:text="или" />
+                android:text="@string/text_OR" />
 
             <Button
                 android:id="@+id/id_create_button_derection_text_view"
@@ -51,7 +52,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="20dp"
-                android:text="Создвть" />
+                android:text="@string/button_create" />
 
             <TextView
                 android:id="@+id/id_textview_addet_direction"
@@ -63,6 +64,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/colorSecondveryLight"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="10dp"
@@ -77,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="выбор путешественника" />
+                android:text="@string/text_Treval_Name_Select_Tourist" />
 
             <Spinner
                 android:id="@+id/id_spener_tourist_treval"
@@ -90,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="230dp"
                 android:layout_marginTop="25dp"
-                android:text="или" />
+                android:text="@string/text_OR" />
 
             <Button
                 android:id="@+id/id_create_button_tourist_text_view"
@@ -98,7 +100,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="20dp"
-                android:text="Создвть" />
+                android:text="@string/button_create" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/id_recycler_viev_select_tourist"
@@ -111,6 +113,7 @@
     </androidx.cardview.widget.CardView>
 
    <androidx.cardview.widget.CardView
+       app:cardBackgroundColor="@color/colorSecondveryLight"
        android:layout_width="match_parent"
        android:layout_height="50dp"
        android:layout_margin="10dp"
@@ -123,18 +126,17 @@
 
            >
            <Button
-               android:layout_marginStart="5dp"
+
                android:id="@+id/id_cancel_button_create_treval"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Отмена"/>
+               android:text="@string/button_cancel"/>
            <Button
                android:id="@+id/id_create_treval_button"
                android:layout_gravity="end"
-               android:layout_marginEnd="5dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Создать"/>
+               android:text="@string/button_create"/>
        </FrameLayout>
    </androidx.cardview.widget.CardView>
 

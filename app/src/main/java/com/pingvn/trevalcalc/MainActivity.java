@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,8 +13,10 @@ import com.pingvn.trevalcalc.Fragments.AddDirectionFragment;
 import com.pingvn.trevalcalc.Fragments.AddTouristFragment;
 import com.pingvn.trevalcalc.Fragments.AddTrevalFragment;
 import com.pingvn.trevalcalc.Fragments.DeleteAllFragment;
+import com.pingvn.trevalcalc.Fragments.EditDirectionFragment;
 import com.pingvn.trevalcalc.Fragments.EditListsTuristandDirectionFragment;
 import com.pingvn.trevalcalc.Fragments.EditTrevalFragment;
+import com.pingvn.trevalcalc.Fragments.EditeTouristFragment;
 import com.pingvn.trevalcalc.Fragments.MainFragmentView;
 
 import io.realm.Realm;
@@ -23,20 +26,20 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
         AddDirectionFragment.OnFragmentAddDirectionInteractionListener,
         AddTouristFragment.OnFragmentAddTouristInteractionListener,
         EditTrevalFragment.OnEditFragmentFragmentInteractionListener,
-        DeleteAllFragment.OnDeleteAllFragmentInteractionListener , EditListsTuristandDirectionFragment.OnTuristAndDirecionFragmentInteractionListener{
+        DeleteAllFragment.OnDeleteAllFragmentInteractionListener,
+        EditListsTuristandDirectionFragment.OnTuristAndDirecionFragmentInteractionListener,
+        EditeTouristFragment.OnEditeTouristFragmentInteractionListener,
+        EditDirectionFragment.OnEditeDirectionFragmentInteractionListener {
     private String mEditeTrevalName = " ";
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
         Realm.init(this);
-
         getSupportFragmentManager().beginTransaction().add(R.id.id_frame_container, new MainFragmentView()).commit();
 
     }
@@ -185,15 +188,28 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
     @Override
     public void onTuristAndDirecionFragmentInteraction(String mCommand, String mName) {
         switch (mCommand) {
-            case "#editeDirection": {
-                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddDirectionFragment()).commit();
+            case "#editDirection": {
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditDirectionFragment.newInstance(mName)).commit();
             }
             break;
             case "#editeTourist": {
-                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddTouristFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditeTouristFragment.newInstance(mName)).commit();
             }
+            break;
 
         }
+
+    }
+
+    @Override
+    public void onEditeDirectionFragmentInteraction(String message) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new MainFragmentView()).commit();
+
+    }
+
+    @Override
+    public void onEditeTouristFragmentInteraction(String message) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new MainFragmentView()).commit();
 
     }
 }

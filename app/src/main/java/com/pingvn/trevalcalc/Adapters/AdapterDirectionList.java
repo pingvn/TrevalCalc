@@ -83,6 +83,7 @@ public class AdapterDirectionList extends RecyclerView.Adapter<AdapterDirectionL
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             initElements(itemView);
         }
 

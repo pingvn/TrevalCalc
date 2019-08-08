@@ -18,9 +18,30 @@
 
     <!--Text -->
     <string name="text_warnind_befor_delete_all">Внимание! Нажав кнопку Удалить, вы удалите все ранее созданые записи.</string>
+    <string name="text_Tourist_Name_Tourist">Имя Туриста</string>
+    <string name="text_Tourist_Deposite">Депозит</string>
+    <string name="text_Tourist_Credite">Кредит</string>
+    <string name="text_Direction_Name_Direction">Имя направления</string>
+    <string name="text_Direction_info_Direction">Дополнительная информация</string>
+    <string name="text_Direction_coast_ticket">Цена билета</string>
+    <string name="text_Direction_cost_live">Стоимость проживания</string>
+    <string name="text_Direction_coest_feed">Стоимость Питания</string>
+    <string name="text_Direction_coast_fade">Расходы на транспорт</string>
+    <string name="text_Treval_Name_Select_Direcion">Выберете направление</string>
+    <string name="text_Treval_Name_Select_Tourist">Выберете туриста</string>
+    <string name="text_OR">или</string>
+
 
     <!-- Message -->
     <string name="Message_delete">Невозможно удалить, элемент используеться.</string>
+
+    <!--Name Fragment -->
+    <string name="Name_Fragment_Edite_Tourist">Редактирование Туриста</string>
+    <string name="Name_Fragment_Add_Tourist">Создание Туриста</string>
+    <string name="Name_Fragment_Edite_Direction">Редактирование Направления</string>
+    <string name="Name_Fragment_Add_Direction">Создание Направления</string>
+    <string name="Name_Fragment_Add_Treval">Создание Путешествия</string>
+    <string name="Nmae_Fragment_Edite_Treval">Редактирование Путешествия</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

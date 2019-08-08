@@ -41,6 +41,16 @@ public class AdapterTreval extends RecyclerView.Adapter<AdapterTreval.ViewHolder
         Treval mTreval = mList.get(position);
         holder.mName.setText(mTreval.getmName());
         holder.mDirection.setText(mTreval.getmDirection().get(0).getmName());
+        double coast = costTrip(mTreval.getmDirection().get(0).getmTicetCoast(),mTreval.getmDirection().get(0).getmAccomodationCoast(),mTreval.getmDirection().get(0).getmFoodCoast(),mTreval.getmDirection().get(0).getFare());
+        double turist = mTreval.getmTurists().size();
+        holder.mDirection.append(" стоимость: "+ coast);
+        holder.mInfo.setText("количество путешественников : "+ mTreval.getmTurists().size());
+        holder.mInfo.append("\nобщая стоимость : "+coast*turist);
+
+    }
+
+    private double costTrip(double ticket, double hotel, double food, double car){
+        return ticket+hotel+food+car;
     }
     public void removeItem(int position){
         Treval mTreval = mRealm.where(Treval.class).equalTo("mName",mList.get(position).getmName()).findFirst();
@@ -60,6 +70,7 @@ public class AdapterTreval extends RecyclerView.Adapter<AdapterTreval.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView mName;
         private TextView mDirection;
+        private TextView mInfo;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -71,6 +82,7 @@ public class AdapterTreval extends RecyclerView.Adapter<AdapterTreval.ViewHolder
         private void inicial(View mView) {
             mName = mView.findViewById(R.id.id_card_travel_name);
             mDirection = mView.findViewById(R.id.id_card_direction_text);
+            mInfo = mView.findViewById(R.id.id_card_treval_info);
         }
 
         @Override
