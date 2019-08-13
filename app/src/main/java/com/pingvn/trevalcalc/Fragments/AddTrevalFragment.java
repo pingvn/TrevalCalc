@@ -80,6 +80,7 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
         mCreateTourist = mView.findViewById(R.id.id_create_button_tourist_text_view);
         mCancel = mView.findViewById(R.id.id_cancel_button_create_treval);
         mSave = mView.findViewById(R.id.id_create_treval_button);
+       // mSave.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_save),null,null,null);
         mChoiseDirection = mView.findViewById(R.id.id_spener_direction_treval);
         mChoiseTourist = mView.findViewById(R.id.id_spener_tourist_treval);
         mDirectionText = mView.findViewById(R.id.id_textview_addet_direction);

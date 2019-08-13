@@ -19,7 +19,7 @@
             android:textSize="18sp" />
 
         <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/colorSecondveryLight"
+            app:cardBackgroundColor="@color/colorSecondBVeryLight"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="10dp">
@@ -45,7 +45,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/colorSecondveryLight"
+            app:cardBackgroundColor="@color/colorSecondBVeryLight"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="10dp">
@@ -71,7 +71,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/colorSecondveryLight"
+            app:cardBackgroundColor="@color/colorSecondBVeryLight"
             android:layout_width="match_parent"
             android:layout_height="500dp"
             android:layout_margin="10dp">
@@ -142,7 +142,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/colorSecondveryLight"
+            app:cardBackgroundColor="@color/colorSecondBVeryLight"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="10dp">
@@ -153,12 +153,14 @@
                 android:layout_margin="5dp">
 
                 <Button
+                    android:background="@color/colorSecondBVeryLight"
                     android:id="@+id/id_Edite_Direction_Button_Cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/button_cancel" />
 
                 <Button
+                    android:background="@color/colorSecondBVeryLight"
                     android:id="@+id/id_Edite_Direction_Button_Save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.DeleteAllFragment">
     <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/colorHelpVeryLight"
+        app:cardBackgroundColor="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_gravity="center"
@@ -24,7 +24,7 @@
                 android:textSize="30sp"/>
 
             <Button
-                android:background="@color/colorSecondLight"
+                android:background="@drawable/newbutton"
                 android:layout_gravity="start|bottom"
                 android:layout_margin="10dp"
                 android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
                 android:id="@+id/id_delete_all_fragment_cancel"
                 android:text="@string/button_cancel"/>
             <Button
-                android:background="@color/colorDelete"
+                android:background="@drawable/newbutton"
                 android:layout_gravity="end|bottom"
                 android:layout_margin="10dp"
                 android:layout_width="wrap_content"

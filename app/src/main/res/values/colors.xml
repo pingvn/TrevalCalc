@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00A67C</color>
-    <color name="colorPrimaryDark">#1f7c65</color>
-    <color name="colorPrimaryDarkness">#006c51</color>
-    <color name="colorPrimaryLight">#35d2ab</color>
-    <color name="colorPrimaryVeryLight">#5fd2b5</color>
-    <color name="colorSecond">#0e51a7</color>
-    <color name="colorSecondDark">#274d7e</color>
-    <color name="colorSecondVeryDark">#05326d</color>
-    <color name="colorSecondLight">#4282d3</color>
-    <color name="colorSecondveryLight">#6997d3</color>
-    <color name="colorSecondB">#ff9e00</color>
-    <color name="colorSecondBDark">#bf8830</color>
-    <color name="colorSecondBVeryDark">#a66600</color>
-    <color name="colorSecondBLight">#ffb640</color>
-    <color name="colorSecondBVeryLight">#ffc973</color>
+    <color name="colorPrimary">#5e0dac</color>
+    <color name="colorPrimaryDark">#552781</color>
+    <color name="colorPrimaryDarkness">#3b0470</color>
+    <color name="colorPrimaryLight">#8d41d6</color>
+    <color name="colorPrimaryVeryLight">#a069d6</color>
+    <color name="colorSecond">#b90091</color>
+    <color name="colorSecondDark">#8b2374</color>
+    <color name="colorSecondVeryDark">#79005e</color>
+    <color name="colorSecondLight">#dc37b8</color>
+    <color name="colorSecondveryLight">#dc63c2</color>
+    <color name="colorSecondB">#2818b1</color>
+    <color name="colorSecondBDark">#382f85</color>
+    <color name="colorSecondBVeryDark">#130873</color>
+    <color name="colorSecondBLight">#5b4cd8</color>
+    <color name="colorSecondBVeryLight">#7c71d8</color>
     <color name="colorHelp">#ff5f00</color>
     <color name="colorHelpDark">#bf6530</color>
     <color name="colorHelpVeryDark">#A63e00</color>
