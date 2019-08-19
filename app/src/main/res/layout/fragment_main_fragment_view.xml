@@ -8,6 +8,7 @@
     >
 
    <androidx.recyclerview.widget.RecyclerView
+       android:layout_marginTop="30dp"
        android:id="@+id/id_recyclerview_treval"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
@@ -18,7 +19,7 @@
         android:id="@+id/id_floatingActionButton_treval"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
+        android:layout_gravity="top|center_horizontal"
         android:clickable="true"
         android:src="@drawable/ic_createtreval"
         app:backgroundTint="@android:color/background_light" />

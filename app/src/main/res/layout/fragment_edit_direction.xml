@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.EditDirectionFragment">
 
     <LinearLayout
@@ -17,159 +17,161 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/Name_Fragment_Edite_Direction"
             android:textSize="18sp" />
-
-        <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/colorSecondBVeryLight"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/text_Direction_Name_Direction" />
-
-                <EditText
-                    android:id="@+id/id_Edite_Text_Edite_Direction_Name"
+        <!--
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorSecondBVeryLight"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp">
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/text_Direction_Name_Direction" />
+
+            <EditText
+                android:id="@+id/id_Edite_Text_Edite_Direction_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+        <!--
+        </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             app:cardBackgroundColor="@color/colorSecondBVeryLight"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/text_Direction_info_Direction" />
-
-                <EditText
-                    android:id="@+id/id_Edite_Text_Edite_Direction_Info"
-                    android:layout_width="match_parent"
-                    android:layout_height="150sp"
-                    android:layout_margin="5dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/colorSecondBVeryLight"
+-->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_margin="10dp">
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/text_Direction_info_Direction" />
+
+            <EditText
+                android:id="@+id/id_Edite_Text_Edite_Direction_Info"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+        <!--
+          </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/text_Direction_coast_ticket" />
-
-                <EditText
-                    android:id="@+id/id_Edite_Direction_Edite_Text_Ticket_Coast"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:inputType="number"
-                    android:text="@string/defaul_values_for_digit_Edit" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/text_Direction_cost_live" />
-
-                <EditText
-                    android:id="@+id/id_Edite_Direction_Edite_Text_Accomodation_Coast"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:inputType="number"
-                    android:text="@string/defaul_values_for_digit_Edit" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/text_Direction_coest_feed" />
-
-                <EditText
-                    android:id="@+id/id_Edit_Direction_Edite_Text_Food_Coast"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:inputType="number"
-                    android:text="@string/defaul_values_for_digit_Edit" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/text_Direction_coast_fade" />
-
-                <EditText
-                    android:id="@+id/id_Edit_Direction_Edite_Text_Edite_fare"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:inputType="number"
-                    android:text="@string/defaul_values_for_digit_Edit" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/colorSecondBVeryLight"
+          <androidx.cardview.widget.CardView
+              android:layout_width="match_parent"
+              android:layout_height="500dp"
+              android:layout_margin="10dp"
+              app:cardBackgroundColor="@color/colorSecondBVeryLight">
+      -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_margin="10dp">
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
 
-            <FrameLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_Direction_coast_ticket" />
+
+            <EditText
+                android:id="@+id/id_Edite_Direction_Edite_Text_Ticket_Coast"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:inputType="number"
+                android:text="@string/defaul_values_for_digit_Edit" />
 
-                <Button
-                    android:background="@color/colorSecondBVeryLight"
-                    android:id="@+id/id_Edite_Direction_Button_Cancel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_cancel" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/text_Direction_cost_live" />
 
-                <Button
-                    android:background="@color/colorSecondBVeryLight"
-                    android:id="@+id/id_Edite_Direction_Button_Save"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="@string/button_create" />
+            <EditText
+                android:id="@+id/id_Edite_Direction_Edite_Text_Accomodation_Coast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:inputType="number"
+                android:text="@string/defaul_values_for_digit_Edit" />
 
-            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/text_Direction_coest_feed" />
 
-        </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/id_Edit_Direction_Edite_Text_Food_Coast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:inputType="number"
+                android:text="@string/defaul_values_for_digit_Edit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/text_Direction_coast_fade" />
+
+            <EditText
+                android:id="@+id/id_Edit_Direction_Edite_Text_Edite_fare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:inputType="number"
+                android:text="@string/defaul_values_for_digit_Edit" />
+
+        </LinearLayout>
+        <!--
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/colorSecondBVeryLight">
+        -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <Button
+                android:id="@+id/id_Edite_Direction_Button_Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/newbutton"
+                android:text="@string/button_cancel" />
+
+            <Button
+                android:id="@+id/id_Edite_Direction_Button_Save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/newbutton"
+                android:text="@string/button_create" />
+
+        </FrameLayout>
+        <!--
+            </androidx.cardview.widget.CardView>
+        -->
     </LinearLayout>
 
 </ScrollView>

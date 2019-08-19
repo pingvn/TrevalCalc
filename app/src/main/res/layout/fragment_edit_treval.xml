@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragments.EditTrevalFragment">
 
@@ -13,133 +13,136 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp" />
-
-    <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/colorSecondBVeryLight"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="10dp"
-        android:elevation="3dp">
-
-        <FrameLayout
+    <!--
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/colorSecondBVeryLight"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp">
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:elevation="3dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/text_Treval_Name_Select_Direcion" />
 
-            <Spinner
-                android:id="@+id/id_spener_direction_Edit_treval"
-                android:layout_width="200dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="25dp"></Spinner>
+    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/text_Treval_Name_Select_Direcion" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="230dp"
-                android:layout_marginTop="25dp"
-                android:text="@string/text_OR" />
-
-            <Button
-                android:background="@drawable/newbutton"
-                android:id="@+id/id_Create_Edite_button_derection_text_view_Treval"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp"
-                android:text="@string/button_create" />
-
-            <TextView
-                android:id="@+id/id_textview_addet_Edit_direction_Treval"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="70dp" />
-
-        </FrameLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/colorSecondBVeryLight"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="10dp">
+        android:layout_height="160dp"
+        android:layout_margin="5dp">
 
-        <FrameLayout
+
+        <Spinner
+            android:id="@+id/id_spener_direction_Edit_treval"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            ></Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_OR" />
+
+        <Button
+            android:id="@+id/id_Create_Edite_button_derection_text_view_Treval"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:background="@drawable/newbutton"
+            android:text="@string/button_create" />
+
+        <TextView
+            android:id="@+id/id_textview_addet_Edit_direction_Treval"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/text_Treval_Name_Select_Tourist" />
+    </FrameLayout>
+    <!--
+</androidx.cardview.widget.CardView>
 
-            <Spinner
-                android:id="@+id/id_spener_tourist_tEdite_reval"
-                android:layout_width="200dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="25dp"></Spinner>
+<androidx.cardview.widget.CardView
+app:cardBackgroundColor="@color/colorSecondBVeryLight"
+android:layout_width="match_parent"
+android:layout_height="200dp"
+android:layout_margin="10dp">
+-->
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_margin="5dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="230dp"
-                android:layout_marginTop="25dp"
-                android:text="@string/text_OR" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/text_Treval_Name_Select_Tourist" />
 
-            <Button
-                android:background="@drawable/newbutton"
-                android:id="@+id/id_create_button_tourist_text_view_Edite_Treval"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp"
-                android:text="@string/button_create" />
+    <Spinner
+        android:id="@+id/id_spener_tourist_tEdite_reval"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="25dp"></Spinner>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/id_recycler_viev_select_tourist_Etite_Treval"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:layout_marginTop="65dp"></androidx.recyclerview.widget.RecyclerView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/text_OR" />
 
-        </FrameLayout>
+    <Button
+        android:background="@drawable/newbutton"
+        android:id="@+id/id_create_button_tourist_text_view_Edite_Treval"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:text="@string/button_create" />
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/colorSecondBVeryLight"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_recycler_viev_select_tourist_Etite_Treval"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:elevation="2dp">
+        android:layout_height="110dp"
+        android:layout_marginTop="65dp"></androidx.recyclerview.widget.RecyclerView>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            >
+</FrameLayout>
+<!--
+</androidx.cardview.widget.CardView>
 
-            <Button
-                android:background="@drawable/newbutton"
-                android:id="@+id/id_cancel_button_create_Edite_treval"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/button_cancel" />
+<androidx.cardview.widget.CardView
+app:cardBackgroundColor="@color/colorSecondBVeryLight"
+android:layout_width="match_parent"
+android:layout_height="50dp"
+android:layout_margin="10dp"
+android:elevation="2dp">
+-->
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
 
-            <Button
-                android:background="@drawable/newbutton"
-                android:id="@+id/id_create_treval_button_Edite_treval"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:text="@string/button_create" />
-        </FrameLayout>
-    </androidx.cardview.widget.CardView>
+    <Button
+        android:background="@drawable/newbutton"
+        android:id="@+id/id_cancel_button_create_Edite_treval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_cancel" />
 
-</LinearLayout>
+    <Button
+        android:background="@drawable/newbutton"
+        android:id="@+id/id_create_treval_button_Edite_treval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/button_create" />
+</FrameLayout>
+    <!--
+</androidx.cardview.widget.CardView>
+-->
+    </LinearLayout>

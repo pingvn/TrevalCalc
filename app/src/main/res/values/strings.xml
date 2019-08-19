@@ -10,6 +10,7 @@
     <string name="button_create">Создать</string>
     <string name="button_cancel">Отмена</string>
     <string name="button_delete">Удалить</string>
+    <string name="button_save">Сохранить</string>
 
     <!--menu -->
     <string name="main_menu_edit_tourist">Редактировать путешественников</string>
@@ -30,6 +31,7 @@
     <string name="text_Treval_Name_Select_Direcion">Выберете направление</string>
     <string name="text_Treval_Name_Select_Tourist">Выберете туриста</string>
     <string name="text_OR">или</string>
+    <string name="text_Treval_Name">Название путешествия</string>
 
 
     <!-- Message -->

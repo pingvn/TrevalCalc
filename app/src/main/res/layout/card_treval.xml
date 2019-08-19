@@ -10,33 +10,34 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="5dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="4dp"
-        app:cardBackgroundColor="@color/colorSecondBVeryLight"
+        android:elevation="3dp"
+        app:cardCornerRadius="5dp"
+        android:background="@drawable/back_card"
         >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="7dp"
-            android:orientation="vertical"
-            >
-            <TextView
-                android:id="@+id/id_card_travel_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"/>
-            <TextView
-                android:id="@+id/id_card_direction_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <TextView
-                android:id="@+id/id_card_treval_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/back_card"
+                >
+                <TextView
+                    android:id="@+id/id_card_travel_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/id_card_direction_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/id_card_treval_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
 
-        </LinearLayout>
+            </LinearLayout>
+
 
     </androidx.cardview.widget.CardView>
 
