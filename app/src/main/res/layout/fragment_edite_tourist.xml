@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragments.EditeTouristFragment">
 
@@ -14,39 +14,45 @@
         android:layout_marginTop="10dp"
         android:text="@string/Name_Fragment_Edite_Tourist"
         android:textSize="18sp" />
-
-    <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/colorSecondBVeryLight"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="10dp">
-
-        <FrameLayout
+    <!--
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/colorSecondBVeryLight"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp">
+            android:layout_height="100dp"
+            android:layout_margin="10dp">
+    -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_margin="5dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/text_Tourist_Name_Tourist" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/text_Tourist_Name_Tourist" />
 
-            <EditText
-                android:id="@+id/id_Edite_Tourist_Edite_Text_Name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="20dp"
-                android:layout_marginTop="20dp" />
+        <EditText
+            android:id="@+id/id_Edite_Tourist_Edite_Text_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
 
-        </FrameLayout>
+            android:layout_marginTop="30dp" />
+
+    </FrameLayout>
+    <!--
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         app:cardBackgroundColor="@color/colorSecondBVeryLight"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_margin="10dp">
+-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:layout_margin="10dp">
 
         <TextView
@@ -58,57 +64,66 @@
 
         <EditText
             android:id="@+id/id_Edite_Tourist_Edite_Text_Deposite"
-            android:layout_width="match_parent"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_gravity="center_horizontal"
             android:inputType="number"
-            android:text="@string/defaul_values_for_digit_Edit"/>
+            android:text="@string/defaul_values_for_digit_Edit" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="10dp"
             android:text="@string/text_Tourist_Credite"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/id_Edite_Tourist_Edite_Text_Credite"
-            android:layout_width="match_parent"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
+            android:layout_gravity="center_horizontal"
             android:inputType="number"
-            android:text="@string/defaul_values_for_digit_Edit"/>
+            android:text="@string/defaul_values_for_digit_Edit" />
+    </FrameLayout>
 
-    </androidx.cardview.widget.CardView>
+    <!--
+        </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/colorSecondBVeryLight"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp">
-
-        <FrameLayout
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/colorSecondBVeryLight"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp">
+            android:layout_height="60dp"
+            android:layout_margin="10dp">
+    -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
 
-            <Button
-                android:background="@drawable/newbutton"
-                android:id="@+id/id_Edite_Tourist_Button_Cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/button_cancel" />
+        <Button
+            android:id="@+id/id_Edite_Tourist_Button_Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/newbutton"
+            android:text="@string/button_cancel" />
 
-            <Button
-                android:background="@drawable/newbutton"
-                android:id="@+id/id_Edite_Tourist_Button_Save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:text="@string/button_create" />
+        <Button
+            android:id="@+id/id_Edite_Tourist_Button_Save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/newbutton"
+            android:text="@string/button_create" />
 
-        </FrameLayout>
-
-    </androidx.cardview.widget.CardView>
-
+    </FrameLayout>
+    <!--
+        </androidx.cardview.widget.CardView>
+    -->
 </LinearLayout>
