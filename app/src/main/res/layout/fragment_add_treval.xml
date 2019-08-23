@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/treval"
+    android:background="@color/colorBackground"
     tools:context=".Fragments.AddTrevalFragment">
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/text_Treval_Name_Select_Direcion"
         android:textSize="18sp" />
 
@@ -45,7 +45,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="190dp"
         android:layout_margin="5dp">
 
         <Spinner
@@ -71,10 +71,17 @@
         <TextView
             android:id="@+id/id_textview_addet_direction"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="35dp"
             android:layout_marginRight="20dp" />
+        <TextView
+            android:textColor="@color/colorDelete"
+            android:id="@+id/id_Direction_final_coast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            />
     </FrameLayout>
     <!--
     </androidx.cardview.widget.CardView>
@@ -126,7 +133,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/id_recycler_viev_select_tourist"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="160dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"></androidx.recyclerview.widget.RecyclerView>
 

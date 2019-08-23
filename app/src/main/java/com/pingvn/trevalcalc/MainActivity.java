@@ -11,6 +11,7 @@ import android.view.CollapsibleActionView;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
     private Toolbar mToolbar;
     private CollapsingToolbarLayout mCollapsindTool;
     private AppBarLayout mAppBarLayout;
+    private int mBackPressed = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
 
     @Override
     public void onFragmentInteraction(String mTrevalName, String mName) {
+        mBackPressed = 0;
 
         switch (mTrevalName) {
             case "#createtreval": {
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
 
     @Override
     public void onFragmentAddTravelInteraction(String respone) {
+        mBackPressed = 0;
         switch (respone) {
             case "#createDirection": {
                 getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new AddDirectionFragment()).commit();
@@ -104,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
 
     @Override
     public void onFragmentAddDirectionInteraction(String respone) {
+        mBackPressed = 0;
         switch (respone) {
             case "#create": {
                 if (mEditeTrevalName == " ") {
@@ -131,6 +136,7 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
 
     @Override
     public void onAddTouristFragmentInteraction(String respone) {
+        mBackPressed = 0;
         switch (respone) {
             case "#create": {
                 if (mEditeTrevalName == " ") {
@@ -158,6 +164,7 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
 
     @Override
     public void onEditFragmentFragmentInteraction(String mCommand, String mName) {
+        mBackPressed = 0;
         mEditeTrevalName = mName;
         switch (mCommand) {
             case "#createDirection": {
@@ -210,18 +217,28 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
                 mAppBarLayout.setExpanded(false);
             }
             break;
+            case R.id.id_menu_exit: {
+                this.finish();
+            }
+            break;
+            case R.id.id_menu_go_main :{
+                getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new MainFragmentView()).commit();
+                mAppBarLayout.setExpanded(true);
+            }
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onDeleteAllFragmentInteraction() {
+        mBackPressed = 1;
         getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, new MainFragmentView()).commit();
         mAppBarLayout.setExpanded(true);
     }
 
     @Override
     public void onTuristAndDirecionFragmentInteraction(String mCommand, String mName) {
+        mBackPressed = 0;
         switch (mCommand) {
             case "#editDirection": {
                 getSupportFragmentManager().beginTransaction().replace(R.id.id_frame_container, EditDirectionFragment.newInstance(mName)).commit();

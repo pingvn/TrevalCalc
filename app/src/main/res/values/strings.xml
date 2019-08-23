@@ -16,6 +16,7 @@
     <string name="main_menu_edit_tourist">Редактировать путешественников</string>
     <string name="main_menu_edit_direction">Редактировать направления</string>
     <string name="main_menu_delete_all">Удалить все записи</string>
+    <string name="main_menu_exit">Выход</string>
 
     <!--Text -->
     <string name="text_warnind_befor_delete_all">Внимание! Нажав кнопку Удалить, вы удалите все ранее созданые записи.</string>
@@ -32,7 +33,11 @@
     <string name="text_Treval_Name_Select_Tourist">Выберете туриста</string>
     <string name="text_OR">или</string>
     <string name="text_Treval_Name">Название путешествия</string>
-
+    <string name="text_Card_Direction">Направление : </string>
+    <string name="text_Card_turist">Количество путешественников :</string>
+    <string name="text_Card_total_coast">Итоговая стоимость :</string>
+    <string name="text_remember_for_exit">Для выхода еще раз нажмите на кнопку</string>
+    <string name="text_menu_go_tu_main">На главную</string>
 
     <!-- Message -->
     <string name="Message_delete">Невозможно удалить, элемент используеться.</string>

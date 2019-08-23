@@ -52,6 +52,8 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
     private String mEditTreval;
     private Treval mTrevalForEdite = new Treval();
     private boolean misEdite = false;
+    private double mFinalCoast;
+    private TextView mTextFinalCoast;
 
 
     public AddTrevalFragment() {
@@ -86,6 +88,7 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
         mDirectionText = mView.findViewById(R.id.id_textview_addet_direction);
         mRecyclerView = mView.findViewById(R.id.id_recycler_viev_select_tourist);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mView.getContext()));
+        mTextFinalCoast = mView.findViewById(R.id.id_Direction_final_coast);
         //------------------------------------------------------------------------------------------
         mSave.setOnClickListener(this);
         mCancel.setOnClickListener(this);
@@ -117,9 +120,12 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
                     if (!nocoise) {
                         mSelectDirection = i;
                         mDirectionText.setText(mDirections.get(i).getmName());
-                        mDirectionText.append(" - ");
-                        mDirectionText.append(mDirections.get(i).getmInfo());
-                        mDirectionText.append(summTreval(mDirections.get(i)));
+                        mDirectionText.append("\n"+mDirections.get(i).getmInfo());
+                        mDirectionText.append("\n"+mDirections.get(i).getmTicetCoast());
+                        mDirectionText.append("\n"+mDirections.get(i).getmAccomodationCoast());
+                        mDirectionText.append("\n"+mDirections.get(i).getmFoodCoast());
+                        mDirectionText.append("\n"+mDirections.get(i).getFare());
+                       // mDirectionText.append(summTreval(mDirections.get(i)));
                     } else {
                         nocoise = false;
                         mListNamesDirections.remove((mListNamesDirections.size()) - 1);
@@ -155,6 +161,8 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
                     if (!nocoiseTourist) {
                         if (!mRealmTourists.contains(mTourists.get(i))) {
                             mRealmTourists.add(mTourists.get(i));
+                            mFinalCoast = summTreval(mDirections.get(mSelectDirection))*mRealmTourists.size();
+                            mTextFinalCoast.setText(getString(R.string.text_Card_turist)+mRealmTourists.size()+"\n"+getString(R.string.text_Card_total_coast)+mFinalCoast);
                         }
                         mAdapterTouristRecycler = new AdapterTourist(mRealmTourists);
                         mRecyclerView.setAdapter(mAdapterTouristRecycler);
@@ -175,8 +183,8 @@ public class AddTrevalFragment extends Fragment implements View.OnClickListener 
 
     }
 
-    private String summTreval(Direction mDirection) {
-        return "\nСумма: " + (mDirection.getmTicetCoast() + mDirection.getmAccomodationCoast() + mDirection.getmFoodCoast() + mDirection.getFare());
+    private double summTreval(Direction mDirection) {
+        return mDirection.getmTicetCoast() + mDirection.getmAccomodationCoast() + mDirection.getmFoodCoast() + mDirection.getFare();
     }
 
 

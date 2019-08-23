@@ -65,7 +65,7 @@ public class MainFragmentView extends Fragment {
         mList = mRealm.copyFromRealm(mRealm.where(Treval.class).findAll());
 
 
-        AdapterTreval mAdapter = new AdapterTreval(mList,mRealm);
+        AdapterTreval mAdapter = new AdapterTreval(mList,mRealm,getContext());
         ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(new SwipeToDeleteTreval(mAdapter,getContext()));
         mItemTouchHelper.attachToRecyclerView(mRecuclerViewTreval);
 

@@ -47,6 +47,7 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
     private Spinner mSpinerTurist;
     private EditText mEditNameTravel;
     private TextView mTextDirection;
+    private TextView mTextFinalCoast;
     private RecyclerView mRecyclerTourist;
     private String mNameDirection;
     private boolean onPushed = false;
@@ -60,6 +61,7 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
     private RealmList<Direction> mList = new RealmList<>();
     private Drawable mIcon;
     private final ColorDrawable mBackground =  new ColorDrawable(Color.RED);
+    private double mFinalCoast;
 
     //----------------------------------------------------------------------------------------------
     public EditTrevalFragment() {
@@ -97,9 +99,13 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     mDirectionPosition = i;
                     mTextDirection.setText(mDirections.get(i).getmName());
-                    mTextDirection.append(" - ");
-                    mTextDirection.append(mDirections.get(i).getmInfo());
-                    mTextDirection.append(summTreval(mDirections.get(i)));
+                    mTextDirection.append("\n"+getString(R.string.text_Direction_info_Direction)+" : "+mDirections.get(i).getmInfo());
+                    mTextDirection.append("\n"+getString(R.string.text_Direction_coast_ticket)+" : "+mDirections.get(i).getmTicetCoast());
+                    mTextDirection.append("\n"+getString(R.string.text_Direction_cost_live)+" : "+mDirections.get(i).getmAccomodationCoast());
+                    mTextDirection.append("\n"+getString(R.string.text_Direction_coest_feed)+" : "+mDirections.get(i).getmFoodCoast());
+                    mTextDirection.append("\n"+getString(R.string.text_Direction_coast_fade)+" : "+mDirections.get(i).getFare());
+                   // mTextDirection.append(summTreval(mDirections.get(i)));
+
                 }
 
                 @Override
@@ -130,6 +136,8 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
                         mRealmTourists.add(mTourists.get(i));
                     }
                     mAdapterTouristRecycler = new AdapterTourist(mRealmTourists);
+                    mFinalCoast = summTreval(mDirections.get(mDirectionPosition))*mRealmTourists.size();
+                    mTextFinalCoast.setText(getString(R.string.text_Card_turist)+mRealmTourists.size()+"\n"+getString(R.string.text_Card_total_coast)+mFinalCoast);
                     mIcon = ContextCompat.getDrawable(getContext(), R.drawable.ic_delete_button);
 
                     ItemTouchHelper.SimpleCallback sampleTouch = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT) {
@@ -145,6 +153,9 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
                             int mPosition = viewHolder.getAdapterPosition();
                             //удаление из адаптера
                             mAdapterTouristRecycler.removeItem(mPosition);
+                            mFinalCoast = summTreval(mDirections.get(mDirectionPosition))*mRealmTourists.size();
+                            mTextFinalCoast.setText(getString(R.string.text_Card_turist)+mRealmTourists.size()+"\n"+getString(R.string.text_Card_total_coast)+mFinalCoast);
+
 
                         }
 
@@ -196,8 +207,8 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
 
     }
 
-    private String summTreval(Direction mDirection) {
-        return "\nСумма: " + (mDirection.getmTicetCoast() + mDirection.getmAccomodationCoast() + mDirection.getmFoodCoast() + mDirection.getFare());
+    private double summTreval(Direction mDirection) {
+        return mDirection.getmTicetCoast() + mDirection.getmAccomodationCoast() + mDirection.getmFoodCoast() + mDirection.getFare();
     }
 
     private void initElements(View mView) {
@@ -210,6 +221,7 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
         mEditNameTravel = mView.findViewById(R.id.id_edittext_Edit_treval_create);
         mTextDirection = mView.findViewById(R.id.id_textview_addet_Edit_direction_Treval);
         mRecyclerTourist = mView.findViewById(R.id.id_recycler_viev_select_tourist_Etite_Treval);
+        mTextFinalCoast = mView.findViewById(R.id.id_Edite_Direction_final_coast);
         mRecyclerTourist.setLayoutManager(new LinearLayoutManager(mView.getContext()));
         mEditNameTravel.setText(mNameTreval);
 
@@ -236,6 +248,9 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
                 int mPosition = viewHolder.getAdapterPosition();
                 //удаление из адаптера
                 mAdapterTouristRecycler.removeItem(mPosition);
+                mFinalCoast = summTreval(mDirections.get(mDirectionPosition))*mRealmTourists.size();
+                mTextFinalCoast.setText(getString(R.string.text_Card_turist)+mRealmTourists.size()+"\n"+getString(R.string.text_Card_total_coast)+mFinalCoast);
+
 
             }
 
@@ -269,7 +284,7 @@ public class EditTrevalFragment extends Fragment implements View.OnClickListener
         };
         ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(sampleTouch);
         mItemTouchHelper.attachToRecyclerView(mRecyclerTourist);
-       // ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(new SwipetoDeleteTouristonTreval(mAdapterTouristRecycler, getContext()));
+        //ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(new SwipetoDeleteTouristonTreval(mAdapterTouristRecycler, getContext()));
         //mItemTouchHelper.attachToRecyclerView(mRecyclerTourist);
         mRecyclerTourist.setAdapter(mAdapterTouristRecycler);
 

@@ -25,7 +25,7 @@
                     android:id="@+id/id_card_travel_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"/>
+                    android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/id_card_direction_text"
                     android:layout_width="wrap_content"
@@ -36,6 +36,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/id_card_filan_chek"/>
 
             </LinearLayout>
 
