@@ -50,10 +50,13 @@ public class MainActivity extends AppCompatActivity implements MainFragmentView.
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mAppBarLayout = findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         mCollapsindTool.setExpandedTitleGravity(Gravity.CENTER_HORIZONTAL);
         mCollapsindTool.setExpandedTitleTextAppearance(R.style.AppBarExpanded);
         mCollapsindTool.setCollapsedTitleTextAppearance(R.style.AppBarCollapsed);
+        mCollapsindTool.setTitleEnabled(false);
         Realm.init(this);
+
         getSupportFragmentManager().beginTransaction().add(R.id.id_frame_container, new MainFragmentView()).commit();
 
 
